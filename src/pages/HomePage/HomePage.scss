@@ -1,0 +1,128 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway&family=Roboto&display=swap");
+
+:root {
+  --main-color: #1976d2;
+  --input-background: #f5f5f5;
+  --bg-color: #141414;
+  --toastify-toast-width: 450px !important;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  background-color: var(--bg-color);
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: "Roboto", sans-serif;
+}
+
+#form-authentification {
+  position: absolute;
+  background: rgba(238, 238, 238, 0.9);
+  box-shadow: -1px 1px 5px 0px rgba(238, 238, 238, 0.75);
+  width: 30%;
+  height: 70%;
+  left: 50%;
+  top: 50%;
+  transform: translate3d(-50%, -50%, 0);
+  border-radius: 10px;
+  overflow: hidden;
+  z-index: 99999;
+}
+
+#flex-authentification {
+  display: flex;
+  transition: transform ease 0.5s;
+  height: 100%;
+}
+
+#flex-authentification div {
+  flex-shrink: 0;
+  width: 100%;
+  height: 100%;
+  padding: 40px;
+  text-align: center;
+}
+
+#flex-authentification div p:first-child {
+  font-weight: bold;
+  font-size: 2rem;
+}
+
+#flex-authentification div p:nth-child(2) {
+  color: #616161;
+}
+
+#flex-authentification div input:first-child {
+  margin-top: 50px !important;
+}
+
+#flex-authentification div input {
+  display: block;
+  height: 60px;
+  border-radius: 10px;
+  padding: 15px;
+  outline: none;
+  border: none;
+  margin-top: 30px;
+  width: 100%;
+  background: var(--input-background);
+}
+
+#flex-authentification div button {
+  outline: none;
+  border: none;
+  display: block;
+  background: var(--main-color);
+  color: #ffffff;
+  padding: 15px;
+  border-radius: 10px;
+  margin-top: 30px;
+  width: 100%;
+  height: 60px;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+
+#flex-authentification div p:nth-of-type(3) {
+  margin-top: 60px;
+}
+
+/* We handle the special case of sign up text */
+#flex-authentification #sign-up p:nth-of-type(3) {
+  margin-top: 35px;
+}
+
+#flex-authentification div p:nth-of-type(3) span {
+  color: var(--main-color);
+  font-weight: bold;
+}
+
+#flex-authentification div p:nth-of-type(3) span:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+#sign-in p:nth-of-type(4) {
+  margin-top: 30px;
+  color: var(--main-color);
+  font-size: 0.9rem;
+}
+#sign-in p:nth-of-type(4):hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 767px) {
+  #form-authentification {
+    width: 95% !important;
+    height: 96% !important;
+    overflow: scroll;
+  }
+}

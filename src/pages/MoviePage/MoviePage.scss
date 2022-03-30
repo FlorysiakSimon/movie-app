@@ -1,0 +1,31 @@
+:root {
+  --main-color: #1976d2;
+  --input-background: #f5f5f5;
+  --root-background: #f5f5f5;
+  --dark-theme: #212121;
+  --light-theme-sidebar-text-color: #77879e;
+  --light-theme-logo-color: #334067;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: "Roboto", sans-serif;
+}
+
+#root {
+  display: flex;
+  background: #ffffff;
+}
+#movie-area {
+  width: calc(100% - 280px);
+  position: relative;
+}
