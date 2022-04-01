@@ -3,6 +3,10 @@ import "./MoviePage.scss"
 import NavBar from '../../components/NavBar/NavBar'
 import db from '../../services/db.js'
 import { toast } from 'react-toastify';
+import NowPlaying from '../../components/NowPlaying/NowPlaying';
+import SearchArea from './../../components/SearchArea/SearchArea';
+import TopRated from './../../components/TopRated/TopRated';
+import SpotLight from './../../components/SpotLight/SpotLight';
 
 export default function MoviePage() {
     
@@ -34,13 +38,17 @@ export default function MoviePage() {
     
     
     return (
-        <section id="root">
-    
-        <div id="sidebar">
+       <div id="movie">
+       
             <NavBar />
-        </div>
-        <div id="movie-area"></div>
 
-        </section>
+            <div id="movie-area">
+                <SpotLight />
+                <NowPlaying />
+                <TopRated />
+            </div>
+
+            <SearchArea />
+        </div> 
     )
 }

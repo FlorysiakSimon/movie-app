@@ -1,0 +1,37 @@
+h2 {
+  color: var(--light-theme-title-color);
+  font-weight: bold;
+  font-size: 18px;
+}
+.nowPlaying {
+  display: flex;
+  //max-width: 800px;
+  &Card {
+    display: flex;
+    margin-right: 10px;
+    position: relative;
+    flex-direction: row;
+    img {
+      object-fit: cover;
+      max-width: 380px;
+      max-height: 250px;
+    }
+    a {
+      position: absolute;
+      bottom: 10px;
+      left: 24px;
+      button {
+        color: white;
+        background-color: var(--button-bg);
+        padding: 1em 2em;
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+
+.splide {
+  width: 100%;
+}

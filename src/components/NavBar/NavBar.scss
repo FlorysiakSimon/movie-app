@@ -29,7 +29,7 @@
   text-align: left;
 }
 
-#sidebar ul li:first-child {
+.title {
   font-weight: bold;
 }
 
@@ -52,4 +52,37 @@
 .sidebar-li-hover:hover {
   color: var(--main-color) !important;
   border-right: 5px solid var(--main-color);
+}
+
+@media screen and (max-width: 767px) {
+  #sidebar {
+    display: flex;
+    flex-direction: column;
+    height: 330px;
+
+    width: 100%;
+    padding: 0;
+    h4 {
+      text-align: center;
+    }
+    ul {
+      margin: 0;
+
+      li {
+        margin-top: 0;
+        padding: 10px;
+        text-align: center;
+      }
+    }
+  }
+  .sidebar-li-hover:hover {
+    color: var(--main-color) !important;
+    border-right: 0px;
+  }
+  .title {
+    display: none;
+  }
+  #sidebar ul li svg {
+    display: none;
+  }
 }

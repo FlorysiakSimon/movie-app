@@ -13,6 +13,7 @@ Full stack web app
 - [sass](https://sass-lang.com/)
 - [axios](https://axios-http.com)
 - [react-toastify](https://fkhadra.github.io/react-toastify/introduction)
+- [react-splide](https://splidejs.com/integration/react-splide/)
 
 ## Installation
 

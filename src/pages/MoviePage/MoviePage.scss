@@ -21,11 +21,18 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
-#root {
+#movie {
   display: flex;
-  background: #ffffff;
 }
+
 #movie-area {
-  width: calc(100% - 280px);
+  width: calc(100% - 280px - 380px);
   position: relative;
+  padding: 1em;
+}
+
+@media screen and (max-width: 767px) {
+  #movie {
+    flex-direction: column;
+  }
 }

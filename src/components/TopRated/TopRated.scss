@@ -1,0 +1,35 @@
+.topRated {
+  display: flex;
+  //max-width: 800px;
+  &Card {
+    display: flex;
+    margin-right: 10px;
+    position: relative;
+    flex-direction: row;
+    a {
+      text-decoration: none;
+      h3 {
+        position: absolute;
+        bottom: 10px;
+        left: 15px;
+        color: white;
+
+        font-size: 16px;
+      }
+    }
+    img {
+      object-fit: cover;
+      max-width: 300px;
+      max-height: 250px;
+      filter: brightness(0.9);
+    }
+    button {
+      color: white;
+      background-color: var(--button-bg);
+      padding: 1em 3em;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+}

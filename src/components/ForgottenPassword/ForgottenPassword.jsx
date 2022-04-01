@@ -39,7 +39,7 @@ export default function ForgottenPassword() {
             return animation(document.querySelector("#flex-authentification"), {animationType:"transform",animationValue: "translate3d(-300%, 0, 0)"})
 		})
 		.catch((error) => {
-			return toast.error("Unable to connect, you have entered the wrong access !")
+			return toast.error("User not found !")
 		})
     }
 

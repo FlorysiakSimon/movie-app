@@ -1,27 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Raleway&family=Roboto&display=swap");
 
-:root {
-  --main-color: #1976d2;
-  --input-background: #f5f5f5;
-  --bg-color: #141414;
-  --toastify-toast-width: 450px !important;
-}
-
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-html,
-body {
-  background-color: var(--bg-color);
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  font-family: "Roboto", sans-serif;
-}
-
 #form-authentification {
   position: absolute;
   background: rgba(238, 238, 238, 0.9);
