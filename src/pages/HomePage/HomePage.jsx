@@ -9,11 +9,9 @@ import ModifyPassword from '../../components/ModifyPassword/ModifyPassword'
 import './HomePage.scss'
 
 
-export default function HomePage() {
 
-    
- 
-    
+
+export default function HomePage() {
     return (
         <div id="form-authentification">
 
@@ -28,3 +26,10 @@ export default function HomePage() {
         </div>
     )
 }
+
+
+
+    
+ 
+    
+    

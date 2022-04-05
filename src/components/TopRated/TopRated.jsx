@@ -1,12 +1,15 @@
 import React, {useEffect,useState} from 'react'
 import './TopRated.scss'
 import db from '../../services/db'
-import { token } from '../../services/token';
 import { Link } from 'react-router-dom';
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 
 
 export default function TopRated() {
+    // In first place i need to check if the JWT is inside the localStorage
+    const userInfos = localStorage.getItem("userInfos");
+    const [token,setToken] = useState(JSON.parse(userInfos).token)
+    
     const [topRated, settopRated] = useState([]); 
 
     useEffect(() => {

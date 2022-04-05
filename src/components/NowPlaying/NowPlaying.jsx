@@ -1,14 +1,17 @@
 import React, {useEffect,useState} from 'react'
 import './NowPlaying.scss'
 import db from '../../services/db'
-import { token } from '../../services/token';
 import { Link } from 'react-router-dom';
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import '@splidejs/splide/dist/css/splide.min.css';
 
 export default function NowPlaying() {
-
+    // In first place i need to check if the JWT is inside the localStorage
+    const userInfos = localStorage.getItem("userInfos");
+    const [token,setToken] = useState(JSON.parse(userInfos).token)
+    
     const [nowPlaying, setnowPlaying] = useState([]); 
+    
 
     useEffect(() => {
           db.get("movies/now-playing/1", {headers: {
