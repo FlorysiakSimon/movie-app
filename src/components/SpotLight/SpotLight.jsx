@@ -16,18 +16,19 @@ export default function SpotLight() {
           db.get("movies/popular/1", {headers: {
             "Authorization": `Bearer ${token}`
             }})
-          .then(response => setspotLight(response.data.results[1]));
-    }, []);
+          .then(response => setspotLight(response.data.results[0]))
+          .catch(e=>setToken(''));
+    }, [token]);
 
     const divStyle = {
-        backgroundPosition: 'right 0 top -200px',
+        backgroundPosition: 'right 0 top -300px',
         backgroundSize: 'cover',
         backgroundRepeat: 'no-repeat',
         backgroundImage: `url(https://image.tmdb.org/t/p/original/${spotLight.poster_path})`,
         minHeight:'280px'
     }   
 
-    console.log(spotLight)
+    
     return (
         <div className='spotLight' style={divStyle}>
             {/* <img src={`https://image.tmdb.org/t/p/original/${spotLight.poster_path}`} alt={spotLight.title} /> */}

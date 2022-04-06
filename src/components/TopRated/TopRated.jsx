@@ -16,8 +16,9 @@ export default function TopRated() {
           db.get("movies/top-rated/1", {headers: {
             "Authorization": `Bearer ${token}`
             }})
-          .then(response => settopRated(response.data.results));
-    }, []);
+          .then(response => settopRated(response.data.results))
+          .catch(e=>setToken(''));
+    }, [token]);
 
   return (
     <>

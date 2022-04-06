@@ -1,0 +1,61 @@
+
+.specific{
+    width: 100%;
+    &Movie{
+        &Info{
+            display:flex;
+            flex-direction: row;
+            img{
+                max-width: 250px;
+            }
+            p{
+                color:white;
+            }
+            &Details{
+                max-width: 60%;
+                &Trailer{
+                    color:white;
+                    padding-bottom: 1em;
+                    &:hover{
+                        cursor: pointer;
+                        text-decoration: underline;
+                    }
+                    svg{
+                        fill:white;
+                        width: 10px;
+                        margin-right: 0.5em;
+                        margin-left: 0.5em;
+                    }
+                    
+                }
+                &Tagline{
+                    
+                    font-size: 1.1em;
+                    font-weight: 400;
+                    font-style: italic;
+                    opacity: 0.7;
+                }
+                padding:2em;
+                h2{
+                    color:white;
+                    margin-bottom: 2px;
+                    font-size: 2.2rem;
+                }
+                h3{
+                    color:white;
+                }
+                p{
+                    margin-top:5px;
+                }
+                
+            }
+        }
+    }
+}
+
+
+
+
+.custombg{
+    background-image: linear-gradient(to right, rgba(31.5, 31.5, 52.5, 1) 150px, rgba(31.5, 31.5, 52.5, 0.84) 100%);
+}

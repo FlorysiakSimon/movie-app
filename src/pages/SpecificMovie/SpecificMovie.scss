@@ -1,33 +1,5 @@
-
-.specific{
+#movieInfos{
+    display:flex;
+    flex-direction: column;
     width: 100%;
-    &Movie{
-        &Info{
-            display:flex;
-            flex-direction: row;
-            img{
-                max-width: 250px;
-            }
-            p{
-                color:white;
-            }
-            &Details{
-                padding:2em;
-                h2{
-                    color:white;
-                    margin-bottom: 2px;
-                    font-size:26px;
-                }
-                p{
-                    margin-top:0
-                }
-                
-            }
-        }
-    }
-}
-
-
-.custombg{
-    background-image: linear-gradient(to right, rgba(31.5, 31.5, 52.5, 1) 150px, rgba(31.5, 31.5, 52.5, 0.84) 100%);
 }

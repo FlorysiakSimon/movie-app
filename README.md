@@ -14,6 +14,7 @@ Full stack web app
 - [axios](https://axios-http.com)
 - [react-toastify](https://fkhadra.github.io/react-toastify/introduction)
 - [react-splide](https://splidejs.com/integration/react-splide/)
+- [r-modal-sf](https://www.npmjs.com/package/r-modal-sf)
 
 ## Installation
 

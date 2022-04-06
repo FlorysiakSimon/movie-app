@@ -17,8 +17,9 @@ export default function NowPlaying() {
           db.get("movies/now-playing/1", {headers: {
             "Authorization": `Bearer ${token}`
             }})
-          .then(response => setnowPlaying(response.data.results));
-    }, []);
+          .then(response => setnowPlaying(response.data.results))
+          .catch(e=>setToken(''));
+    }, [token]);
 
     
     return (
