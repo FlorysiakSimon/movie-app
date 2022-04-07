@@ -13,6 +13,9 @@ import './HomePage.scss'
 
 export default function HomePage() {
     return (
+        <div id="signup">
+
+        
         <div id="form-authentification">
 
             <div id="flex-authentification">
@@ -23,6 +26,7 @@ export default function HomePage() {
                 <ModifyPassword/>
             </div>
 
+        </div>
         </div>
     )
 }

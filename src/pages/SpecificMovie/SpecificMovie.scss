@@ -2,4 +2,18 @@
     display:flex;
     flex-direction: column;
     width: 100%;
+    &Wrapper{
+        display:flex;
+        &Left{
+            width: 70%;
+        }
+        &Right{
+            width:30%;
+        }
+    }
+}
+
+.movieTitle{
+    margin-left:1em;
+    margin-bottom: 0;
 }

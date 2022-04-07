@@ -51,9 +51,9 @@ export const getMovieVideos = async (id,token) => {
     }
 };
 
-export const getMovieSimilar = async (id,token) => {
+export const getMovieRecommendations = async (id,token) => {
     try {
-        const res = await axios.get(`${baseURL}movies/${id}/similar`, {headers: {
+        const res = await axios.get(`${baseURL}movies/${id}/recommendations`, {headers: {
             "Authorization": `Bearer ${token}`
             }});
         return res.data;
@@ -61,3 +61,28 @@ export const getMovieSimilar = async (id,token) => {
         console.log(e);
     }
 };
+
+
+/* COMMENTS REQUEST */
+export const getMovieComments = async (id,token) => {
+    try {
+        const res = await axios.get(`${baseURL}comment/${id}`, {headers: {
+            "Authorization": `Bearer ${token}`
+            }});
+        return res.data;
+    } catch (e) {
+        console.log(e);
+    }
+};
+
+export const postMovieComments = async (author,author_id,comment,movie_id,avatar,token) => {
+    try {
+        const res = await axios.post(`${baseURL}comment/newComment`,{author,author_id,comment,movie_id,avatar}, {headers: {
+            "Authorization": `Bearer ${token}`
+            }});
+        return res.data;
+    } catch (e) {
+        console.log(e);
+    }
+};
+

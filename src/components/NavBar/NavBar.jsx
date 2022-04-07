@@ -11,7 +11,8 @@ export default function NavBar() {
   return (
       <>
       <div id="sidebar">
-        <h4>Mon Cinéma</h4>
+
+        <Link to="/movies"><h4>Mon Cinéma</h4></Link>
       
          <ul>
             <li className="title">LIBRARY</li>

@@ -1,0 +1,15 @@
+.similar{
+    min-height: 100%;
+    overflow: hidden;
+    border-left: 1px solid #e0e0e031;
+    &Card{
+        display:flex;
+        margin:1em;
+        img{
+            width:100px;
+        }
+        &Infos{
+            padding:1em;
+        }
+    }
+}

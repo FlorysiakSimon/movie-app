@@ -4,29 +4,12 @@ import { Modal } from 'r-modal-sf';
 
 export default function MovieHeader({data,videos}) {
 
+    //MODAL
     const [modalOpen, setModalOpen] = useState(false);
     
     const toggleModal = () => {
         setModalOpen(!modalOpen);
     };
-
-    function NumToTime(num) { 
-        var hours = Math.floor(num / 60);  
-        var minutes = num % 60;
-        if (minutes + ''.length < 2) {
-          minutes = '0' + minutes; 
-        }
-        return hours + "h " + minutes;
-    }
-      
-
-    const divStyle = {
-        backgroundPosition: 'right 0 top',
-        backgroundSize: 'cover',
-        backgroundRepeat: 'no-repeat',
-        backgroundImage: `url(https://image.tmdb.org/t/p/original/${data.backdrop_path})`,
-        minHeight:'280px'
-    }
 
     const customStyle = {
         modal:{
@@ -71,6 +54,27 @@ export default function MovieHeader({data,videos}) {
             background: 'transparent',
         }
     }
+
+    //Convert numbers into hours
+    function NumToTime(num) { 
+        var hours = Math.floor(num / 60);  
+        var minutes = num % 60;
+        if (minutes + ''.length < 2) {
+          minutes = '0' + minutes; 
+        }
+        return hours + "h " + minutes;
+    }
+      
+    //custom bg style
+    const divStyle = {
+        backgroundPosition: 'right 0 top',
+        backgroundSize: 'cover',
+        backgroundRepeat: 'no-repeat',
+        backgroundImage: `url(https://image.tmdb.org/t/p/original/${data?.backdrop_path})`,
+        minHeight:'280px'
+    }
+
+    
     
     return (
     <>
@@ -78,7 +82,7 @@ export default function MovieHeader({data,videos}) {
             <div className="specificMovie" style={divStyle}>
                 <div className='custombg'>
                     <div className='specificMovieInfo'>
-                        <img src={`https://image.tmdb.org/t/p/w500/${data.poster_path}`} alt={data.title} />
+                        <img src={`https://image.tmdb.org/t/p/w500/${data?.poster_path}`} alt={data.title} />
                         <div className='specificMovieInfoDetails'>
                             <h2>{data.title}</h2>
                             <p>{data.release_date} <span>&#183;</span> {
@@ -112,7 +116,6 @@ export default function MovieHeader({data,videos}) {
             frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen>
-
             </iframe>}
         modalOpen={modalOpen}
         modalClose={toggleModal}

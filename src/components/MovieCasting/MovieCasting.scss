@@ -1,8 +1,6 @@
 .casting{
     display:flex;
-    &Title{
-        margin:1em;
-    }
+    flex-wrap: wrap;
     &Infos{
         box-shadow: 0 2px 8px rgb(0 0 0 / 10%);
         border: 1px solid rgba(var(--lightGrey), 1);
@@ -28,3 +26,4 @@
         }
     }
 }
+

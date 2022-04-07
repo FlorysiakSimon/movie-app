@@ -1,0 +1,54 @@
+.comments{
+    margin: 1em;
+    display:flex;
+    
+    flex-direction: column;
+    textarea{
+        width: 350px;
+        margin-bottom: 1em;
+    }
+    button{
+        background-color: white; 
+        color: black; 
+        padding: 7px 7px;
+        width: 150px;
+        transition-duration: 0.4s;
+        border: 2px solid var(--main-color);
+        &:hover{
+            background-color: var(--main-color);
+            color: white;
+            cursor: pointer;
+        }
+    }
+    &Section{
+        display:flex;
+        margin:1em;
+        border-bottom: 1px solid #ededed;
+        padding-bottom: 1.875rem;
+        margin-bottom: 1.875rem;
+        img{
+            width:100px;
+            height: 100px;
+            object-fit: cover;
+            margin-right: 10px;
+        }
+        &Infos{
+            display:flex;
+            padding-left:1em;
+            flex-direction: row;
+            align-items: center;
+            
+            h4{
+                margin: 0 5em 0 0;
+            }
+            p{
+                font-weight: 400;
+                font-size:11px;
+            }
+        }
+        &Comment{
+            font-size: 15px;
+            padding-left:1em;
+        }
+    }
+}

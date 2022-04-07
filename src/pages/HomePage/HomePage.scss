@@ -1,5 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Raleway&family=Roboto&display=swap");
 
+#signup{
+  background-color: var(--dark-theme);
+  width: 100%;
+  height: 100vh;
+}
+
 #form-authentification {
   position: absolute;
   background: rgba(238, 238, 238, 0.9);
@@ -97,10 +103,19 @@
   cursor: pointer;
 }
 
+@media screen and (max-width: 1024px) {
+  #form-authentification {
+    width: 60% !important;
+    height: 75% !important;
+    overflow: hidden;
+  }
+}
+
 @media screen and (max-width: 767px) {
   #form-authentification {
     width: 95% !important;
     height: 96% !important;
-    overflow: scroll;
+    overflow: hidden;
   }
 }
+
