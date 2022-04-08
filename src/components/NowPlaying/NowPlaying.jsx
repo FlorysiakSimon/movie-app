@@ -39,6 +39,7 @@ export default function NowPlaying() {
                             <div className="nowPlayingCard" >
                             <img src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} alt={movie.title} />
                             <Link to={`/movies/${movie.id}`}><button>Watch Now</button></Link>
+                            <button className='nowPlayingWatchlist addtowatch'>+</button>
                             </div>
                         </SplideSlide>
             })}

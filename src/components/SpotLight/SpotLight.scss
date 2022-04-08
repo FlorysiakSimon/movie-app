@@ -26,4 +26,9 @@
     filter: brightness(0.7);
     object-fit: cover;
   }
+  &Watchlist{
+      position: absolute;
+      bottom: 20px;
+      left: 210px;
+  }
 }

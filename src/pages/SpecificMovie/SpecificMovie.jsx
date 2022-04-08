@@ -1,6 +1,6 @@
 import React, {useState,useEffect} from 'react'
 import { useParams } from 'react-router-dom';
-import { getMovie, getMovieCredits, getMovieVideos, getMovieRecommendations } from '../../services/db';
+import { getMovie, getMovieCredits, getMovieVideos, getMovieRecommendations,getMovieComments } from '../../services/db';
 import './SpecificMovie.scss'
 import NavBar from './../../components/NavBar/NavBar';
 import MovieHeader from '../../components/MovieHeader/MovieHeader';
@@ -23,6 +23,7 @@ export default function SpecificMovie() {
     const [credits,setCredits] = useState([]);
     const [videos,setVideos] = useState([]);
     const [recommendations,setRecommendations] = useState([]);
+    const [comments,setComments] = useState([])
 
     const {id} = useParams();
     
@@ -49,6 +50,12 @@ export default function SpecificMovie() {
             const filteredVideos = request.results?.filter(video=> video.type === "Trailer");
             setVideos(filteredVideos[0]);
         };
+        const fetchComments = async () => {
+            const request = await getMovieComments(id,token);
+            if (!request) return console.log('data error');
+            setComments(request.data);
+        };
+        fetchComments();
         fetchRecommendations();
         fetchMovie();
         fetchCasting();
@@ -58,7 +65,7 @@ export default function SpecificMovie() {
     //console.log(credits)
     //console.log(movie)
     //console.log(videos)
-    console.log(recommendations)
+    //console.log(recommendations)
     return (
         <div id="movie">
 
@@ -69,7 +76,7 @@ export default function SpecificMovie() {
                 <div id="movieInfosWrapper">
                     <div id="movieInfosWrapperLeft">
                         <MovieCasting data={credits} />
-                        <MovieComments />
+                        <MovieComments data={comments} id={id}/>
                     </div>
                     <div id="movieInfosWrapperRight">
                         <MovieRecommendations data={recommendations}/>

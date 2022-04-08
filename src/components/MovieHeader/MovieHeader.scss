@@ -5,6 +5,7 @@
         &Info{
             display:flex;
             flex-direction: row;
+            position: relative;
             img{
                 max-width: 250px;
                 object-fit: cover;
@@ -51,9 +52,13 @@
                 
             }
         }
+        &WatchList{
+            position:absolute;
+            top:10px;
+            left: 282px;
+        }
     }
 }
-
 
 
 

@@ -26,7 +26,7 @@ body {
 }
 
 #movie-area {
-  width: calc(100% - 280px - 380px);
+  width: 60%;
   position: relative;
   padding: 1em;
 }
@@ -34,5 +34,9 @@ body {
 @media screen and (max-width: 767px) {
   #movie {
     flex-direction: column;
+    &-area{
+      width: 100%;
+    }
   }
+
 }

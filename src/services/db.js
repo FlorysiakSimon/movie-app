@@ -6,6 +6,7 @@ export default axios.create({
 
 const baseURL = 'http://localhost:3000/'
 
+/* VERIFY JSON WEB TOKEN */ 
 export const verifyToken = async (token) => {
 	axios.get('http://localhost:3000/users/verifytoken', { headers: { Authorization: `Bearer`+ token } })
     .then(response => {
@@ -16,6 +17,31 @@ export const verifyToken = async (token) => {
         console.log('error ' + error);
     });
 };
+
+/* HOMEPAGE REQUEST */
+export const getPopularMovies = async (token) => {
+    try {
+        const res = await axios.get(`${baseURL}movies/popular/2`, {headers: {
+            "Authorization": `Bearer ${token}`
+            }});
+        return res.data;
+    } catch (e) {
+        console.log(e);
+    }
+};
+
+export const searchMovie = async (movie,token) => {
+    try {
+        const res = await axios.get(`${baseURL}movies/search/${movie}/1`, {headers: {
+            "Authorization": `Bearer ${token}`
+            }});
+        return res.data;
+    } catch (e) {
+        console.log(e);
+    }
+};
+
+
 
 /* SPECIFIC MOVIE REQUESTS */
 export const getMovie = async (id,token) => {
@@ -67,6 +93,7 @@ export const getMovieRecommendations = async (id,token) => {
 export const getMovieComments = async (id,token) => {
     try {
         const res = await axios.get(`${baseURL}comment/${id}`, {headers: {
+            'Content-Type': 'application/json',
             "Authorization": `Bearer ${token}`
             }});
         return res.data;

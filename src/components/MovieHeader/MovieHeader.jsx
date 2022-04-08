@@ -78,11 +78,14 @@ export default function MovieHeader({data,videos}) {
     
     return (
     <>
+        {data.length ? ( 'lol' ): undefined}
         <div className='specific'>
             <div className="specificMovie" style={divStyle}>
                 <div className='custombg'>
+                    
                     <div className='specificMovieInfo'>
                         <img src={`https://image.tmdb.org/t/p/w500/${data?.poster_path}`} alt={data.title} />
+                        <button className='specificMovieWatchList addtowatch'>+</button>
                         <div className='specificMovieInfoDetails'>
                             <h2>{data.title}</h2>
                             <p>{data.release_date} <span>&#183;</span> {

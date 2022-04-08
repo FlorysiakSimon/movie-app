@@ -34,8 +34,9 @@ export default function SpotLight() {
             {/* <img src={`https://image.tmdb.org/t/p/original/${spotLight.poster_path}`} alt={spotLight.title} /> */}
             <h3>{spotLight.title}</h3>
             <Link to={`/movies/${spotLight.id}`}>
-                <button>Watch Now</button>
+                <button>Watch Now</button>  
             </Link>
+            <button className="spotLightWatchlist addtowatch">+</button>
         </div>
     )
 }
