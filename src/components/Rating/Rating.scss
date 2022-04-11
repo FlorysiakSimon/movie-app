@@ -1,0 +1,10 @@
+.rating{
+    display:flex;
+    position:absolute;
+    bottom:0;
+    flex-direction: row;
+    &Star{
+        width: 15px;
+    }
+    
+}

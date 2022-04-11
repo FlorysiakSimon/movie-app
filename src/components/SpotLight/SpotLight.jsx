@@ -20,17 +20,14 @@ export default function SpotLight() {
           .catch(e=>setToken(''));
     }, [token]);
 
-    const divStyle = {
-        backgroundPosition: 'right 0 top -300px',
-        backgroundSize: 'cover',
-        backgroundRepeat: 'no-repeat',
-        backgroundImage: `url(https://image.tmdb.org/t/p/original/${spotLight.poster_path})`,
-        minHeight:'280px'
-    }   
-
-    
     return (
-        <div className='spotLight' style={divStyle}>
+        <div className='spotLight' style={{
+            backgroundPosition: 'right 0 top -300px',
+            backgroundSize: 'cover',
+            backgroundRepeat: 'no-repeat',
+            backgroundImage: `url(https://image.tmdb.org/t/p/original${spotLight.poster_path})`,
+            minHeight:'280px'
+            }}>
             {/* <img src={`https://image.tmdb.org/t/p/original/${spotLight.poster_path}`} alt={spotLight.title} /> */}
             <h3>{spotLight.title}</h3>
             <Link to={`/movies/${spotLight.id}`}>

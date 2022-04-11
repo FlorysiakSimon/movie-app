@@ -13,6 +13,7 @@ import SpecificMovie from './pages/SpecificMovie/SpecificMovie';
 //Dependencies
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.min.css';
+import ListPage from "./pages/ListPage/ListPage";
 
 
 
@@ -23,6 +24,7 @@ render(
       <Route path="/" element={<HomePage />} />
       <Route path="/movies" element={<MoviePage/>} />
       <Route path="/movies/:id" element={<SpecificMovie />}/>
+      <Route path="/:name/:page" element={<ListPage />}/>
     </Routes>
     <ToastContainer
       position="bottom-left"

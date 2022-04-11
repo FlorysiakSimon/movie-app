@@ -20,6 +20,7 @@ export default function TopRated() {
           .catch(e=>setToken(''));
     }, [token]);
 
+
   return (
     <>
         <h2>Top Rated Movies</h2>
@@ -29,16 +30,19 @@ export default function TopRated() {
                 perPage: 3,
                 pagination:false,
                 rewind : true,
-                gap    : '1rem',
+                
             }}>
 
                 {topRated.map((movie,index) => {
                     return  <SplideSlide key={index}>
-                                <div className="topRatedCard" >
+                                <div className="topRatedCard"
+                                    style={{backgroundImage: `url(https://image.tmdb.org/t/p/w500/${movie?.backdrop_path})`,minHeight:'250px',backgroundSize:"cover"}} 
+                                    >
+                                    <div className='topRatedCardCustom'>
                                     <Link to={`/movies/${movie.id}`}>
-                                        <img src={`https://image.tmdb.org/t/p/w500/${movie.backdrop_path}`} alt={movie.title} />
-                                        <h3>{movie.title}</h3>
+                                        <h3>{movie.title}  <span>({(new Date(movie.release_date)).getFullYear()})</span></h3>
                                     </Link>
+                                    </div>
                                 </div>
                             </SplideSlide>
                 })}

@@ -22,16 +22,17 @@ export default function NowPlaying() {
     }, [token]);
 
     
+    //console.log(nowPlaying)
+
     return (
     <>
     
     <h2>Now Playing</h2>
     <div className='nowPlaying'>
         <Splide options={ {
-            perPage: 5,
+            perPage: 4,
             pagination:false,
             rewind : true,
-            gap    : '1rem',
         }}>
 
             {nowPlaying.map((movie,index) => {

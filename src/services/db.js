@@ -113,3 +113,16 @@ export const postMovieComments = async (author,author_id,comment,movie_id,avatar
     }
 };
 
+
+/* MOVIE REQUESTS */
+
+export const topRatedMovies = async (page,token) => {
+    try {
+        const res = await axios.get(`${baseURL}movies/top-rated/${page}`, {headers: {
+            "Authorization": `Bearer ${token}`
+            }});
+        return res.data;
+    } catch (e) {
+        console.log(e);
+    }
+};
