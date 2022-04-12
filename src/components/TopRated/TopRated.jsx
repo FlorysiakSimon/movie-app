@@ -3,7 +3,7 @@ import './TopRated.scss'
 import db from '../../services/db'
 import { Link } from 'react-router-dom';
 import { Splide, SplideSlide } from '@splidejs/react-splide';
-
+import '@splidejs/splide/dist/css/splide.min.css';
 
 export default function TopRated() {
     // In first place i need to check if the JWT is inside the localStorage
@@ -28,6 +28,11 @@ export default function TopRated() {
         <div className='topRated'>
             <Splide options={ {
                 perPage: 3,
+                breakpoints: {
+                    430: {
+                        perPage:2,
+                    },
+                },
                 pagination:false,
                 rewind : true,
                 

@@ -14,10 +14,12 @@ export default function MovieCasting({data}) {
             return index <= 5 ?
 
             <div className='castingInfos' key={index}>
-                <img src={`https://image.tmdb.org/t/p/w500/${cast.profile_path}`} alt={cast.name}/>
+               {cast.profile_path === null 
+               ? <img src="/images/placeholder.jpg" alt={cast.name}/> 
+               : <img src={`https://image.tmdb.org/t/p/w500/${cast.profile_path}`} alt={cast.name}/>}
                 <h4>{cast.name} </h4>
                 <p>{cast.character}</p>
-                </div> 
+            </div> 
             
             : undefined
         })}

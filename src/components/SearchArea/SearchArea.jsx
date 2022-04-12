@@ -59,7 +59,9 @@ export default function SearchArea() {
           return (
             <Link to={`/movies/${card.id}`} className="popular" key={index}>
               <div className='popularCard'>
-                <img src={`https://image.tmdb.org/t/p/w200/${card.poster_path}`} alt={card.title} />
+              {card.poster_path === null 
+               ? <img src="/images/placeholder.jpg" alt={card.title}/> 
+               : <img src={`https://image.tmdb.org/t/p/w500/${card.poster_path}`} alt={card.title}/>}
                 <div className='popularCardInfos'>
                   <h3>{card.title} <span>({(new Date(card.release_date)).getFullYear()})</span> </h3>
                   <p>{card.overview}</p>
@@ -75,7 +77,9 @@ export default function SearchArea() {
 
           <Link to={`/movies/${card.id}`} className="popular" key={index}>
             <div className='popularCard'>
-              <img src={`https://image.tmdb.org/t/p/w200/${card.poster_path}`} alt={card.title} />
+              {card.poster_path === null 
+               ? <img src="/images/placeholder.jpg" alt={card.title}/> 
+               : <img src={`https://image.tmdb.org/t/p/w500/${card.poster_path}`} alt={card.title}/>}
               <div className='popularCardInfos'>
                 <h3>{card.title} <span>({(new Date(card.release_date)).getFullYear()})</span> </h3>
                 <p>{card.overview}</p>
@@ -88,7 +92,7 @@ export default function SearchArea() {
       })
       }
 
-      {!search.length ? (<Link to="/popular"><button className='popularButton'>See More</button></Link>) : undefined}
+      {!search.length ? (<Link to="/popular/1"><button className='popularButton'>See More</button></Link>) : undefined}
 
       <h2 className='movieTitle'>Watchlists</h2>
     </div>

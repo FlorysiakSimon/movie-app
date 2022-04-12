@@ -10,11 +10,10 @@ h2 {
     display: flex;
     margin-right: 10px;
     position: relative;
-    flex-direction: row;
+    width: 380px;
+    height: 250px;
     img {
-      object-fit: cover;
-      max-width: 380px;
-      max-height: 250px;
+      
     }
     a {
       position: absolute;
@@ -32,11 +31,7 @@ h2 {
   }
   &Watchlist{
     position: absolute;
-    right: 0px;
+    left: 10px;
     top:10px;
   }
-}
-
-.splide {
-  width: 100%;
 }

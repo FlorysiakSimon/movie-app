@@ -40,9 +40,10 @@
   &Card{
       display:flex;
       margin:1em;
+      min-height: 115px;
       img{
-          max-width:150px;
-          max-height: 150px;
+          max-width:73px;
+          max-height: 110px;
           object-fit: cover;
       }
       &Infos{

@@ -14,6 +14,7 @@ import SpecificMovie from './pages/SpecificMovie/SpecificMovie';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.min.css';
 import ListPage from "./pages/ListPage/ListPage";
+import ProfilePage from "./pages/ProfilePage/ProfilePage";
 
 
 
@@ -25,6 +26,7 @@ render(
       <Route path="/movies" element={<MoviePage/>} />
       <Route path="/movies/:id" element={<SpecificMovie />}/>
       <Route path="/:name/:page" element={<ListPage />}/>
+      <Route path="/profile" element={<ProfilePage />}/>
     </Routes>
     <ToastContainer
       position="bottom-left"
