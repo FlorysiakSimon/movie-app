@@ -15,6 +15,7 @@ Full stack web app
 - [react-toastify](https://fkhadra.github.io/react-toastify/introduction)
 - [react-splide](https://splidejs.com/integration/react-splide/)
 - [r-modal-sf](https://www.npmjs.com/package/r-modal-sf)
+- [react-paginate](https://github.com/AdeleD/react-paginate#readme)
 
 ## Installation
 

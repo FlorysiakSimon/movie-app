@@ -25,7 +25,7 @@ render(
       <Route path="/" element={<HomePage />} />
       <Route path="/movies" element={<MoviePage/>} />
       <Route path="/movies/:id" element={<SpecificMovie />}/>
-      <Route path="/:name/:page" element={<ListPage />}/>
+      <Route path="/:name" element={<ListPage />}/>
       <Route path="/profile" element={<ProfilePage />}/>
     </Routes>
     <ToastContainer

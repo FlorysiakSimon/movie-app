@@ -54,6 +54,13 @@
   border-right: 5px solid var(--main-color);
 }
 
+
+@media screen and (max-width: 1240px) {
+  #sidebar {
+    width:200px;
+  }
+}
+
 @media screen and (max-width: 767px) {
   #sidebar {
     display: flex;

@@ -1,3 +1,49 @@
 .movieList{
     width: 100%;
 }
+
+.pagination{
+    display:flex;
+    align-items: center;
+    padding-left:10px;
+}
+
+.pagination > li {
+    display: flex;
+    flex-direction: row;
+    padding-left: 0;
+  }
+  .pagination > li {
+    list-style: none;
+  }
+  .pagination > li > a,
+  .pagination > li > span {
+    position: relative;
+    float: left;
+    padding: 6px 12px;
+    line-height: 1.42857143;
+    text-decoration: none;
+    color: #2c689c;
+    background-color: #fff;
+    margin-left: -1px;
+  }
+  
+  .pagination>li.active>a {
+    color: #fff;
+    background-color: var(--main-color);
+  }
+  
+  /* Style the active class (and buttons on mouse-over) */
+  .pagination > li > a:hover {
+    background-color:  var(--main-color);
+    cursor: pointer;
+    color: white;
+  }
+  .pagination > li:first-child > a,
+  .pagination > li:first-child > span {
+    display: block;
+  }
+  .pagination > li:last-child > a,
+  .pagination > li:last-child > span {
+    display: block;
+  }

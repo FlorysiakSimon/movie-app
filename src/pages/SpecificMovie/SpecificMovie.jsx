@@ -72,7 +72,7 @@ export default function SpecificMovie() {
             <NavBar />
 
             <div id='movieInfos'>
-                <MovieHeader data={movie} videos={videos} />
+                <MovieHeader movie={movie} videos={videos} />
                 <div id="movieInfosWrapper">
                     <div id="movieInfosWrapperLeft">
                         <MovieCasting data={credits} />

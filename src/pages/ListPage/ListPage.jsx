@@ -1,4 +1,5 @@
 import React,{useEffect,useState} from 'react'
+import ReactPaginate from "https://cdn.skypack.dev/react-paginate@7.1.3";
 import NavBar from '../../components/NavBar/NavBar'
 import './ListPage.scss'
 import db from '../../services/db'
@@ -15,29 +16,46 @@ export default function ListPage() {
         setToken('')
         window.location.href = "/";
     }
-
     //page params 
     const {name} = useParams()
-    const {page} = useParams()
+   
 
     //data state
-    const[data,setDate] = useState([])
+    const[data,setData] = useState([])
+    const [currentPage, setPage] = useState(1);
 
     useEffect(() => {
-        db.get(`movies/${name}/${page}`, {headers: {
+        db.get(`movies/${name}/${currentPage}`, {headers: {
             "Authorization": `Bearer ${token}`
             }})
-          .then(response => setDate(response.data))
+          .then(response => setData(response.data))
           .catch(e=>setToken(''));
-    }, [name,page,token]);
-
-    console.log(data.results)
+    }, [name,currentPage,token]);
+    
+    const handlePageChange = (page) => {
+        setPage(page.selected + 1)
+        document.querySelector('.movieList').scrollIntoView()
+       // window.scroll(0, 0);
+    };
+    
     return (
         <div id="movie">
             <NavBar />
 
             <div className='movieList'>
                 <MovieItem data={data.results} />
+
+                <ReactPaginate
+                    nextLabel=">"
+                    onPageChange={handlePageChange}
+                    pageCount={data.total_pages}
+                    previousLabel="<"
+                    breakLabel="..."
+                    containerClassName="pagination"
+                    activeClassName="active"
+                    renderOnZeroPageCount={null}
+                />
+
             </div>
             
         </div>

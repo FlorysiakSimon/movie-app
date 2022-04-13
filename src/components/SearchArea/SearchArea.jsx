@@ -92,7 +92,7 @@ export default function SearchArea() {
       })
       }
 
-      {!search.length ? (<Link to="/popular/1"><button className='popularButton'>See More</button></Link>) : undefined}
+      {!search.length ? (<Link to="/popular"><button className='popularButton'>See More</button></Link>) : undefined}
 
       <h2 className='movieTitle'>Watchlists</h2>
     </div>

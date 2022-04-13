@@ -20,7 +20,9 @@ export default function NowPlaying() {
           .catch(e=>setToken(''));
     }, [token]);
 
-    
+    const addToWatchList = (movie) =>{
+        console.log(movie)
+    }
     //console.log(nowPlaying)
 
     return (
@@ -51,9 +53,12 @@ export default function NowPlaying() {
         {nowPlaying.map((movie,index) => {
             return  <SplideSlide key={index}>
                         <div className="nowPlayingCard"  >
-                        <img src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} alt={movie.title} />
+                        {movie.poster_path === null 
+                            ? <img src="/images/placeholder.jpg" alt={movie.title}/> 
+                            : <img src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} alt={movie.title}/>
+                        }
                         <Link to={`/movies/${movie.id}`}><button>Watch Now</button></Link>
-                        <button className='nowPlayingWatchlist addtowatch'>+</button>
+                        <button className='nowPlayingWatchlist addtowatch' onClick={addToWatchList}>+</button>
                         </div>
                     </SplideSlide>
         })}
