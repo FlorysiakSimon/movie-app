@@ -90,6 +90,18 @@ export const getMovieRecommendations = async (id,token) => {
 
 
 /* COMMENTS REQUEST */
+
+export const getUserAvatar = async (id) => {
+    try {
+        const res = await axios.get(`${baseURL}users/getAvatar/${id}`, {headers: {
+            'Content-Type': 'application/json',
+            }});
+        return res.data;
+    } catch (e) {
+        console.log(e);
+    }
+};
+
 export const getMovieComments = async (id,token) => {
     try {
         const res = await axios.get(`${baseURL}comment/${id}`, {headers: {
@@ -113,7 +125,15 @@ export const postMovieComments = async (author,author_id,comment,movie_id,avatar
     }
 };
 
+export const deleteMovieComment = async (author_id,_id,token) => {
+    try {
+        const res = await axios.delete(`${baseURL}comment/deleteComment`, { data: { author_id,_id }, headers: { "Authorization": `Bearer ${token}` } });
 
+        return res.data;
+    } catch (e) {
+        console.log(e);
+    }
+};
 /* MOVIE REQUESTS */
 
 export const topRatedMovies = async (page,token) => {

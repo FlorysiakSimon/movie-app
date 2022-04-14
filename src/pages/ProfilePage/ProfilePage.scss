@@ -1,3 +1,30 @@
 .profile{
     width: 100%;
+    &Name{
+        margin:1em;
+    }
+    &Infos{
+        margin:1em;
+        h4{
+            margin-bottom: 0;
+        }
+        span{
+            font-size: 14px;
+        }
+    }
+    &Modify{
+        margin:1em;
+        display:flex;
+        align-items: baseline;
+        &Avatar{
+            padding: 1em;
+            max-width: 150px;
+            max-height: 150px;
+            img{
+                width: 100%;
+                object-fit: cover;
+            }
+        }
+    }
 }
+
