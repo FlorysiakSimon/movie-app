@@ -30,9 +30,9 @@ export const getPopularMovies = async (token) => {
     }
 };
 
-export const searchMovie = async (movie,token) => {
+export const searchMovie = async (movie,token,pages) => {
     try {
-        const res = await axios.get(`${baseURL}movies/search/${movie}/1`, {headers: {
+        const res = await axios.get(`${baseURL}movies/search/${movie}/${pages}`, {headers: {
             "Authorization": `Bearer ${token}`
             }});
         return res.data;
@@ -127,8 +127,9 @@ export const postMovieComments = async (author,author_id,comment,movie_id,avatar
 
 export const deleteMovieComment = async (author_id,_id,token) => {
     try {
-        const res = await axios.delete(`${baseURL}comment/deleteComment`, { data: { author_id,_id }, headers: { "Authorization": `Bearer ${token}` } });
-
+        const res = await axios.delete(`${baseURL}comment/deleteComment`,
+         { data: { author_id,_id },
+         headers: { "Authorization": `Bearer ${token}` } });
         return res.data;
     } catch (e) {
         console.log(e);

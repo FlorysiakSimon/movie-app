@@ -1,0 +1,35 @@
+.discover{
+    position:relative;
+    text-align: center;
+    margin-top:1em;
+    svg{
+      width: 20px;
+      position:absolute;
+      right:140px;
+      top:15px;
+      fill:#3D4A6F;
+    }
+    input{
+      height: 50px;
+      border-radius: 30px;
+      background-color: #F1F7FF;
+      color:#A4B0C1;
+      border:none;
+      font-weight: 900;
+      font-family: 'Roboto',sans-serif;
+      width:85%;
+      padding-left: 3em;
+      &:focus{
+        outline: none;
+      }
+    }
+}
+
+ 
+@media screen and (max-width: 970px) {
+  .discover{
+      svg{
+          right:70px;
+      }
+  }
+}

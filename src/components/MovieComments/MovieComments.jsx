@@ -56,7 +56,7 @@ export default function MovieComments({data,id}) {
     // }
 
 // console.log(token)
-//     console.log(data)
+     console.log(data)
     return (
         <>
             <h2 className='movieTitle'>Comments</h2>
@@ -70,10 +70,15 @@ export default function MovieComments({data,id}) {
                     
                     return <div className="commentsSection" key={index}>
                                 {getUserAvatar(comment.author_id)}
-                                <img src={getAvatar} alt={comment.author} />
+
+                                <div>
+                                    <img src={getAvatar} alt={comment.author} />
+                                    <h4 className='commentsSectionNickname'>{comment.author}</h4>
+                                </div>
+                                
                                 <div>
                                     <div className='commentsSectionInfos'>
-                                        <h4>{comment.author}</h4>
+                                        <h5>{comment.date}</h5>
 
                                         {comment.author_id === user_id ?
                                         <svg onClick={() => {

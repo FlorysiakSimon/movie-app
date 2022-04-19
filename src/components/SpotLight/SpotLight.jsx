@@ -22,11 +22,11 @@ export default function SpotLight() {
 
     return (
         <div className='spotLight' style={{
-            backgroundPosition: 'right 0 top -300px',
+            backgroundPosition: 'right 0 top -140px',
             backgroundSize: 'cover',
             backgroundRepeat: 'no-repeat',
             backgroundImage: `url(https://image.tmdb.org/t/p/original/${spotLight?.poster_path})`,
-            minHeight:'280px'
+            minHeight:'360px'
             }}>
                 
             <h3>{spotLight.title}</h3>

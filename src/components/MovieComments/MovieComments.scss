@@ -34,7 +34,6 @@
         }
         &Infos{
             display:flex;
-            padding-left:1em;
             flex-direction: row;
             align-items: center;
             justify-content: space-between;
@@ -44,18 +43,25 @@
                     cursor: pointer;
                 }
             }
-            h4{
+            h5{
+                margin:0;
+                color:#b3b3b3;
+                font-weight: 400;
             }
             p{
                 font-weight: 400;
                 font-size:11px;
             }
         }
+        &Nickname{
+            margin:0;
+            font-size: 15px;
+        }
         &Comment{
             font-size: 15px;
-            padding-left:1em;
             max-width: 300px;
             display: -webkit-box;
+            margin-top:1.5em;
             min-width: 500px;
             word-wrap: break-word;
             font-size: 12px;

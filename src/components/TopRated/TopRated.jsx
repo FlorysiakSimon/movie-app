@@ -41,7 +41,7 @@ export default function TopRated() {
                 {topRated.map((movie,index) => {
                     return  <SplideSlide key={index}>
                                 <div className="topRatedCard"
-                                    style={{backgroundImage: `url(https://image.tmdb.org/t/p/w500/${movie?.backdrop_path})`,minHeight:'250px',backgroundSize:"cover"}} 
+                                    style={{backgroundImage: `url(https://image.tmdb.org/t/p/w500/${movie?.backdrop_path})`,minHeight:'190px',backgroundSize:"cover"}} 
                                     >
                                     <div className='topRatedCardCustom'>
                                     <Link to={`/movies/${movie.id}`}>

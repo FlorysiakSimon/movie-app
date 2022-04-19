@@ -1,0 +1,36 @@
+.popular{
+    overflow: hidden;
+    width: 100%;
+    &Card{
+        display:flex;
+        margin:1em;
+        min-height: 115px;
+        img{
+            max-width:73px;
+            object-fit: cover;
+        }
+        &Infos{
+          margin-left:1em;
+          display: flex;
+          flex-direction: column;
+          position:relative;
+            h3{
+              color:var(--light-theme-title-color);
+              font-size: 15px;
+              margin-top:0;
+            }
+            span{
+              opacity: 0.6;
+            }
+            p{
+              display: -webkit-box;
+              max-width: 200px;
+              font-size: 12px;
+              -webkit-line-clamp: 3;
+              -webkit-box-orient: vertical;
+              overflow: hidden;
+            }
+            
+        }
+    }
+  }

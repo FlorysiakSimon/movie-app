@@ -9,12 +9,14 @@ import './index.css'
 import HomePage from './pages/HomePage/HomePage';
 import MoviePage from "./pages/MoviePage/MoviePage";
 import SpecificMovie from './pages/SpecificMovie/SpecificMovie';
+import DiscoverPage from "./pages/DiscoverPage/DiscoverPage";
+import ListPage from "./pages/ListPage/ListPage";
+import ProfilePage from "./pages/ProfilePage/ProfilePage";
 //Components
 //Dependencies
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.min.css';
-import ListPage from "./pages/ListPage/ListPage";
-import ProfilePage from "./pages/ProfilePage/ProfilePage";
+
 
 
 
@@ -26,6 +28,7 @@ render(
       <Route path="/movies" element={<MoviePage/>} />
       <Route path="/movies/:id" element={<SpecificMovie />}/>
       <Route path="/:name" element={<ListPage />}/>
+      <Route path="/discover" element={<DiscoverPage />} />
       <Route path="/profile" element={<ProfilePage />}/>
     </Routes>
     <ToastContainer

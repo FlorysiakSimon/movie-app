@@ -62,22 +62,22 @@ export default function ProfilePage() {
                 
                 <div className='profileModify'>
                 
-                    <form onSubmit={handleSubmit} encType="multipart/form-data" >
+                    {/* <form onSubmit={handleSubmit} encType="multipart/form-data" >
                         <input 
                         type="file" 
                         accept="image/png, image/jpg, image/jpeg"
                         onChange={(e) => setFile(e.target.files[0])} />
                         <input type="submit" value="Submit"/>
-                    </form>
+                    </form> */}
 
                     <div className='profileModifyAvatar'>
                         <img src={userAvatar} alt={author} />
                     </div>
                     
-                    {/* <form method="post"  encType="multipart/form-data" action={`http://localhost:3000/users/modify-avatar/${user_id}`} >
+                    <form method="post"  encType="multipart/form-data" action={`http://localhost:3000/users/modify-avatar/${user_id}`} >
                         <input type="file"  onChange={(e) => setFile(e.target.files[0])} name="image"/>
                         <input type="submit" value="Submit"/>
-                    </form> */}
+                    </form>
                 </div>
                 
 

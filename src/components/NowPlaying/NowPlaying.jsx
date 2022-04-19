@@ -33,16 +33,16 @@ export default function NowPlaying() {
         <Splide options={ {
                 perPage: 6,
                 breakpoints: {
-                    1440: {
+                    1625: {
                         perPage:5,
                     },
-                    1250: {
+                    1440: {
                         perPage:4,
                     },
-                    640: {
+                    1169: {
                         perPage:3,
                     },
-                    430: {
+                    540: {
                         perPage:2,
                     },
                 },

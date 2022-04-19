@@ -1,8 +1,12 @@
 import React, { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
-import { getPopularMovies, searchMovie } from '../../services/db';
-import Rating from '../Rating/Rating';
 import './SearchArea.scss'
+import { Link } from 'react-router-dom'
+//back-end calls
+import { getPopularMovies, searchMovie } from '../../services/db';
+//components
+import Rating from '../Rating/Rating';
+import SearchItem from '../SearchItem/SearchItem';
+
 
 
 export default function SearchArea() {
@@ -18,7 +22,7 @@ export default function SearchArea() {
   const [search, setSearch] = useState('')
   const [data, setData] = useState([]);
   const [searchData, setSearchData] = useState([]);
-
+  const pages=1;
 
 
   useEffect(() => {
@@ -56,45 +60,31 @@ export default function SearchArea() {
 
       {search.length ? (
         searchData.map((card, index) => {
-          return (
-            <Link to={`/movies/${card.id}`} className="popular" key={index}>
-              <div className='popularCard'>
-              {card.poster_path === null 
-               ? <img src="/images/placeholder.jpg" alt={card.title}/> 
-               : <img src={`https://image.tmdb.org/t/p/w500/${card.poster_path}`} alt={card.title}/>}
-                <div className='popularCardInfos'>
-                  <h3>{card.title} <span>({(new Date(card.release_date)).getFullYear()})</span> </h3>
-                  <p>{card.overview}</p>
-                  <Rating rating={card.vote_average}/>
-                </div>
-              </div>
-            </Link>
-          );
-        }
+          return index <= 4 ?
+
+            <SearchItem data={card} key={index}/>
+            
+            :undefined
+          }
         )
+
       ) : data?.map((card, index) => {
         return index <= 1 ?
 
-          <Link to={`/movies/${card.id}`} className="popular" key={index}>
-            <div className='popularCard'>
-              {card.poster_path === null 
-               ? <img src="/images/placeholder.jpg" alt={card.title}/> 
-               : <img src={`https://image.tmdb.org/t/p/w500/${card.poster_path}`} alt={card.title}/>}
-              <div className='popularCardInfos'>
-                <h3>{card.title} <span>({(new Date(card.release_date)).getFullYear()})</span> </h3>
-                <p>{card.overview}</p>
-                <Rating rating={card.vote_average}/>
-              </div>
-            </div>
-          </Link>
+          <SearchItem data={card} key={index}/>
 
-          : undefined
+        : undefined
+
       })
       }
 
-      {!search.length ? (<Link to="/popular"><button className='popularButton'>See More</button></Link>) : undefined}
+      {!search.length 
+      ? (<Link to="/popular"><button className='popularButton'>See More</button></Link>) 
+      : <Link to="/discover"><button className='popularButton'>See More</button></Link>}
 
-      <h2 className='movieTitle'>Watchlists</h2>
+      {!search.length 
+      ?  <h2 className='movieTitle'>Watchlists</h2>
+      : undefined}
     </div>
   )
 }
