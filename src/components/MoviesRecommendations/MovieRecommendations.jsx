@@ -2,6 +2,10 @@ import React from 'react'
 import { Link } from 'react-router-dom';
 import './MovieRecommendations.scss'
 
+
+/** Display movie recommendations for a specific movie
+ * @param  {array} data
+ */
 export default function MoviesRecommendations({data}) {
   return (
     <div className='similar'>

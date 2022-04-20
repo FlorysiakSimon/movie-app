@@ -3,6 +3,9 @@ import { Link } from 'react-router-dom'
 import Rating from '../Rating/Rating'
 import './SearchItem.scss'
 
+/** Display search item results
+ * @param  {array} data
+ */
 export default function SearchItem({data}) {
   return (
     <Link to={`/movies/${data.id}`} className="popular" >

@@ -2,6 +2,10 @@ import React,{useState} from 'react'
 import './MovieHeader.scss'
 import { Modal } from 'r-modal-sf';
 
+/** Display movie header view with a modal to view trailer for a movie
+ * @param  {array} movie
+ * @param  {array} videos
+ */
 export default function MovieHeader({movie,videos}) {
 
     //MODAL
@@ -88,15 +92,21 @@ export default function MovieHeader({movie,videos}) {
                         <div className='specificMovieInfoDetails'>
                             <h2>{movie.title}</h2>
                             <p>{movie.release_date} <span>&#183;</span> {
-                                movie.genres?.map((genres,index) => {
+                                movie?.genres?.map((genres,index) => {
                                         return  <span className='' key={index}>{genres.name} </span>
                                     })
                                 }<span>&#183;</span> {NumToTime(movie.runtime) }
-                                <span className='specificMovieInfoDetailsTrailer' onClick={toggleModal}>
+                                
+                                {videos ? <span className='specificMovieInfoDetailsTrailer' onClick={toggleModal}>
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
                                         <path d="M361 215C375.3 223.8 384 239.3 384 256C384 272.7 375.3 288.2 361 296.1L73.03 472.1C58.21 482 39.66 482.4 24.52 473.9C9.377 465.4 0 449.4 0 432V80C0 62.64 9.377 46.63 24.52 38.13C39.66 29.64 58.21 29.99 73.03 39.04L361 215z"/></svg>
                                          Play trailer
-                                </span>
+                                </span> 
+                                :<>
+                                    <span> &#183;</span><span className='specificMovieInfoDetailsTrailer' > No trailer available</span>
+                                </> 
+                                }
+
                             </p>
                             <p className='specificMovieInfoDetailsTagline'>{movie.tagline}</p>
                             <h3>Synopsys</h3>
@@ -108,22 +118,24 @@ export default function MovieHeader({movie,videos}) {
             </div>
             
         </div>
-
-        <Modal
-        content={<iframe 
-            width="800"
-            height="600"
-            src={`https://www.youtube.com/embed/${videos.key}`}
-            title="YouTube video player"
-            frameBorder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen>
-            </iframe>}
-        modalOpen={modalOpen}
-        modalClose={toggleModal}
-        buttonContent="X"
-        style={customStyle}
-        />
+        {videos ? <Modal
+                    content={<iframe 
+                        width="800"
+                        height="600"
+                        src={`https://www.youtube.com/embed/${videos.key}`}
+                        title="YouTube video player"
+                        frameBorder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowFullScreen>
+                        </iframe>}
+                    modalOpen={modalOpen}
+                    modalClose={toggleModal}
+                    buttonContent="X"
+                    style={customStyle}
+                    /> 
+                :   undefined
+        }
+        
     </>
   )
 }

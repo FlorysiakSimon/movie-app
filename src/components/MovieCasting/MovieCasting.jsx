@@ -1,7 +1,9 @@
 import React from 'react'
 import './MovieCasting.scss'
 
-
+/** Display casting for a movie
+ * @param  {array} data
+ */
 export default function MovieCasting({data}) {
   return (
       <>

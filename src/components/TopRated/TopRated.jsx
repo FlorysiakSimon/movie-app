@@ -5,6 +5,9 @@ import { Link } from 'react-router-dom';
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import '@splidejs/splide/dist/css/splide.min.css';
 
+
+/** Display Top Rated caroussel on MoviePage
+ */
 export default function TopRated() {
     // In first place i need to check if the JWT is inside the localStorage
     const userInfos = localStorage.getItem("userInfos");

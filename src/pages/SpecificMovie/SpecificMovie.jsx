@@ -21,7 +21,7 @@ export default function SpecificMovie() {
     //data states
     const [movie, setMovie] = useState([]);
     const [credits,setCredits] = useState([]);
-    const [videos,setVideos] = useState([]);
+    const [videos,setVideos] = useState(null);
     const [recommendations,setRecommendations] = useState([]);
     const [comments,setComments] = useState([])
 

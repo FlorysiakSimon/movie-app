@@ -4,11 +4,11 @@ import { Link } from 'react-router-dom'
 //back-end calls
 import { getPopularMovies, searchMovie } from '../../services/db';
 //components
-import Rating from '../Rating/Rating';
 import SearchItem from '../SearchItem/SearchItem';
 
 
-
+/** Display right search area on MoviePage
+ */
 export default function SearchArea() {
   // In first place i need to check if the JWT is inside the localStorage
   const userInfos = localStorage.getItem("userInfos");
@@ -22,7 +22,7 @@ export default function SearchArea() {
   const [search, setSearch] = useState('')
   const [data, setData] = useState([]);
   const [searchData, setSearchData] = useState([]);
-  const pages=1;
+
 
 
   useEffect(() => {

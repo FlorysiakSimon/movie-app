@@ -7,6 +7,8 @@ import { searchMovie } from '../../services/db';
 import { useParams } from 'react-router-dom'
 import MovieItem from '../../components/MovieItem/MovieItem'
 import GenresItems from '../../components/GenresItems/GenresItems';
+
+
 export default function DiscoverPage() {
 
     // In first place i need to check if the JWT is inside the localStorage
@@ -27,7 +29,6 @@ export default function DiscoverPage() {
     const [currentPage, setPage] = useState(1);
     const [search, setSearch] = useState('')
     const [searchData, setSearchData] = useState([]);
-    const [selectedGenres, setSelectedGenres] = useState([]);
 
     useEffect(() => {
         db.get(`movies/discover/${currentPage}/${genres}`, {headers: {

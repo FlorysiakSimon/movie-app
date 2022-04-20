@@ -4,6 +4,9 @@ import db from '../../services/db'
 import { Link } from 'react-router-dom';
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 
+
+/** Display now playing caroussel on MoviePage
+ */
 export default function NowPlaying() {
     // In first place i need to check if the JWT is inside the localStorage
     const userInfos = localStorage.getItem("userInfos");

@@ -8,16 +8,17 @@
         margin-bottom: 1em;
     }
     button{
-        background-color: white; 
-        color: black; 
-        padding: 7px 7px;
-        width: 150px;
-        transition-duration: 0.4s;
-        border: 2px solid var(--main-color);
+        border-radius: 10px;
+        color: #fff;
+        cursor: pointer;
+        font-weight: 700;
+        padding: 15px 30px;
+        text-transform: uppercase;
+        transition: .3s;
+        width: 200px;
+        background-color: var(--main-color);
         &:hover{
-            background-color: var(--main-color);
-            color: white;
-            cursor: pointer;
+            opacity: 0.7;
         }
     }
     &Section{
@@ -67,5 +68,47 @@
             font-size: 12px;
             -webkit-box-orient: vertical;
         }
+    }
+}
+
+.title{
+    color: var(--light-theme-title-color);
+    font-weight: 700;
+    font-size: 1.2rem;
+  }
+
+.confirmation-message{
+    line-height: 1.5;
+    color: #67727e;
+    margin-bottom: 1em;
+    margin-top:1em;
+}
+
+.btn-container{
+    display: flex;
+    justify-content: space-around;
+
+    button{
+      color: white;
+      text-transform: uppercase;
+      font-weight: 700;
+      padding: 15px 20px;
+      border: none;
+      border-radius: 10px;
+      transition: 0.3s;
+      cursor: pointer;
+
+      &:hover{
+        opacity: 0.7;
+      }
+    }
+    
+    .cancel-btn{
+      background: #67727e;
+    }
+
+    .delete-btn{
+      background: #ed6468;
+      color: white;
     }
 }
