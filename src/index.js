@@ -16,6 +16,7 @@ import ProfilePage from "./pages/ProfilePage/ProfilePage";
 //Dependencies
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.min.css';
+import WatchlistPage from "./pages/WatchlistPage/WatchlistPage";
 
 
 
@@ -30,6 +31,7 @@ render(
       <Route path="/:name" element={<ListPage />}/>
       <Route path="/discover" element={<DiscoverPage />} />
       <Route path="/profile" element={<ProfilePage />}/>
+      <Route path="/watchlist" element={<WatchlistPage />}/>
     </Routes>
     <ToastContainer
       position="bottom-left"

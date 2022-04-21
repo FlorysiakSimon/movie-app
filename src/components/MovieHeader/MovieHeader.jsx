@@ -1,6 +1,7 @@
 import React,{useState} from 'react'
 import './MovieHeader.scss'
 import { Modal } from 'r-modal-sf';
+import { addStorage } from '../../services/addStorage';
 
 /** Display movie header view with a modal to view trailer for a movie
  * @param  {array} movie
@@ -88,7 +89,7 @@ export default function MovieHeader({movie,videos}) {
                         ? <img src="/images/placeholder.jpg" alt={movie.title}/> 
                         : <img src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} alt={movie.title}/>}
 
-                        <button className='specificMovieWatchList addtowatch'>+</button>
+                        <button className='specificMovieWatchList addtowatch' onClick={()=>{addStorage(movie)}}>+</button>
                         <div className='specificMovieInfoDetails'>
                             <h2>{movie.title}</h2>
                             <p>{movie.release_date} <span>&#183;</span> {

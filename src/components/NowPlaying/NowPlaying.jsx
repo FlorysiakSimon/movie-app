@@ -3,7 +3,7 @@ import './NowPlaying.scss'
 import db from '../../services/db'
 import { Link } from 'react-router-dom';
 import { Splide, SplideSlide } from '@splidejs/react-splide';
-
+import { addStorage } from '../../services/addStorage';
 
 /** Display now playing caroussel on MoviePage
  */
@@ -23,9 +23,8 @@ export default function NowPlaying() {
           .catch(e=>setToken(''));
     }, [token]);
 
-    const addToWatchList = (movie) =>{
-        console.log(movie)
-    }
+   
+
     //console.log(nowPlaying)
 
     return (
@@ -61,7 +60,7 @@ export default function NowPlaying() {
                             : <img src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} alt={movie.title}/>
                         }
                         <Link to={`/movies/${movie.id}`}><button>Watch Now</button></Link>
-                        <button className='nowPlayingWatchlist addtowatch' onClick={addToWatchList}>+</button>
+                        <button className='nowPlayingWatchlist addtowatch' onClick={() => {addStorage(movie)}}>+</button>
                         </div>
                     </SplideSlide>
         })}

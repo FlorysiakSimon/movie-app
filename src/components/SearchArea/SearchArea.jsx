@@ -3,6 +3,7 @@ import './SearchArea.scss'
 import { Link } from 'react-router-dom'
 //back-end calls
 import { getPopularMovies, searchMovie } from '../../services/db';
+import db from '../../services/db';
 //components
 import SearchItem from '../SearchItem/SearchItem';
 
@@ -19,12 +20,27 @@ export default function SearchArea() {
     window.location.href = "/";
   }
 
+  //datas states
   const [search, setSearch] = useState('')
   const [data, setData] = useState([]);
   const [searchData, setSearchData] = useState([]);
+  const [listData, setListData] = useState([]);
 
+  //WATCHLIST
+  useEffect(() => {
+    let moviesId = window.localStorage.watchlist
+      ? window.localStorage.watchlist.split(",")
+      : [];
 
+    for (let i = 0; i < moviesId.length; i++) {
+      db.get(`movies/${moviesId[i]}`, {headers: {
+        "Authorization": `Bearer ${token}`
+        }})
+        .then((res) => setListData((listData) => [...listData, res.data]));
+    }
+  }, [token]);
 
+  //POPULARMOVIE
   useEffect(() => {
     const getData = async () => {
       const request = await getPopularMovies(token);
@@ -34,7 +50,7 @@ export default function SearchArea() {
     getData();
   }, [token]);
 
-
+  //SEARCHMOVIE
   useEffect(() => {
     if(search.length){
       const getSearchData = async () => {
@@ -46,7 +62,7 @@ export default function SearchArea() {
     }
   }, [search, token]);
 
-  
+  //console.log(listData)
   //console.log(data)
 
   return (
@@ -82,9 +98,21 @@ export default function SearchArea() {
       ? (<Link to="/popular"><button className='popularButton'>See More</button></Link>) 
       : <Link to="/discover"><button className='popularButton'>See More</button></Link>}
 
+      {!search.length ? <h2 className='movieTitle'>Watchlist</h2> : undefined}
+
+
       {!search.length 
-      ?  <h2 className='movieTitle'>Watchlists</h2>
+        
+        ? listData?.map((card,index) =>  {
+        return index <= 1 ?
+
+          <SearchItem data={card} key={index}/>
+
+        : undefined
+        })
       : undefined}
+
+      {!search.length ? <Link to="/watchlist"><button className='popularButton'>See More</button></Link>:undefined}
     </div>
   )
 }

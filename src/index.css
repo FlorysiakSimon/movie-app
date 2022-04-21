@@ -33,7 +33,8 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
-ul{
+ul,
+li{
   list-style-type:none;
 }
 

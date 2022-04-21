@@ -1,7 +1,7 @@
 import React, {useEffect,useState} from 'react'
 import './SpotLight.scss'
 import db from '../../services/db'
-
+import { addStorage } from '../../services/addStorage';
 import { Link } from 'react-router-dom';
 
 
@@ -20,6 +20,8 @@ export default function SpotLight() {
           .catch(e=>setToken(''));
     }, [token]);
 
+
+
     return (
         <div className='spotLight' style={{
             backgroundPosition: 'right 0 top -140px',
@@ -33,7 +35,7 @@ export default function SpotLight() {
             <Link to={`/movies/${spotLight.id}`}>
                 <button>Watch Now</button>  
             </Link>
-            <button className="spotLightWatchlist addtowatch">+</button>
+            <button className="spotLightWatchlist addtowatch" onClick={()=>{addStorage(spotLight)}}>+</button>
         </div>
     )
 }

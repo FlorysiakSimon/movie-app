@@ -18,8 +18,12 @@
               color:var(--light-theme-title-color);
               font-size: 15px;
               margin-top:0;
+              margin-bottom: 5px;
             }
             span{
+              color:var(--light-theme-title-color);
+              font-size: 12px;
+              font-weight: bold;
               opacity: 0.6;
             }
             p{
