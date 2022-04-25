@@ -3,6 +3,7 @@
     grid-template-rows: auto;
     grid-template-columns: repeat(6,1fr);
     grid-column-gap: 0px;
+    animation: appear 450ms ease-in-out 1;
     &Item{
         max-width:220px;
         height: 400px;
@@ -52,6 +53,17 @@
     }
 }
 
+/* KEYFRAMES */
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+    transform: translateY(+25px);
+  }
+  100% {
+    opacity: 1;
+  }
+}
 
 @media screen and (max-width: 1495px) {
     .list{

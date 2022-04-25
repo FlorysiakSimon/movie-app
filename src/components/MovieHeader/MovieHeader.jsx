@@ -2,6 +2,7 @@ import React,{useState} from 'react'
 import './MovieHeader.scss'
 import { Modal } from 'r-modal-sf';
 import { addStorage } from '../../services/addStorage';
+import { removeStorage } from '../../services/removeStorage';
 
 /** Display movie header view with a modal to view trailer for a movie
  * @param  {array} movie
@@ -25,6 +26,7 @@ export default function MovieHeader({movie,videos}) {
             right: '0',
             bottom: '0',
             position: 'fixed',
+            zIndex:"9",
         },
         overlay:{
             width: '100vw',
@@ -70,26 +72,32 @@ export default function MovieHeader({movie,videos}) {
         return hours + "h " + minutes;
     }
       
-    
-    
+    let storedData = window.localStorage.watchlist
+
     return (
     <>
         <div className='specific'>
-            <div className="specificMovie" 
+            
+           <div className="specificMovie" 
                 style={{backgroundPosition: 'right 0 top',
                         backgroundSize: 'cover',
                         backgroundRepeat: 'no-repeat',
                         backgroundImage: `url(https://image.tmdb.org/t/p/original/${movie.backdrop_path})`,
                         minHeight:'280px'}}
                 >
+                
                 <div className='custombg'>
                     <div className='specificMovieInfo'>
                         
-                        {movie.poster_path === null 
+                        {movie.poster_path === undefined || movie.poster_path === null
                         ? <img src="/images/placeholder.jpg" alt={movie.title}/> 
                         : <img src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} alt={movie.title}/>}
+                        
+                        {!storedData.includes(movie.id) 
+                        ?<button className='specificMovieWatchList addtowatch' onClick={() => {addStorage(movie)}}>+</button>
+                        :<button className='specificMovieWatchList removetowatch' onClick={() => {removeStorage(movie)}}>-</button>}
 
-                        <button className='specificMovieWatchList addtowatch' onClick={()=>{addStorage(movie)}}>+</button>
+                        {/* <button className='specificMovieWatchList addtowatch' onClick={()=>{addStorage(movie)}}>+</button> */}
                         <div className='specificMovieInfoDetails'>
                             <h2>{movie.title}</h2>
                             <p>{movie.release_date} <span>&#183;</span> {

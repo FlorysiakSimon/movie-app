@@ -1,0 +1,24 @@
+.genres{
+    display:flex;
+    flex-wrap: wrap;
+    margin: 1em;
+  }
+  
+  .tag{
+   padding: 2px 10px;
+    background-color: var(--main-color);
+    color:white;
+    margin:3px;
+    border-radius: 15px;
+    font-size: 1rem;
+    transition: opacity 0.3s ease;
+    &:hover{
+        cursor: pointer;
+        opacity: 0.7;
+    }
+  }
+  
+  .active{
+    background-color: var(--button-bg);
+  }
+  

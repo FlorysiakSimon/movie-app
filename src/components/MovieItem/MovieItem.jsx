@@ -2,7 +2,6 @@ import React from 'react'
 import './MovieItem.scss'
 import { Link } from 'react-router-dom'
 
-
 /** Display movie card for ListPage
  * @param  {array} data
  */

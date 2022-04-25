@@ -4,7 +4,7 @@ import db from '../../services/db'
 import { Link } from 'react-router-dom';
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import { addStorage } from '../../services/addStorage';
-
+import {removeStorage} from '../../services/removeStorage';
 /** Display now playing caroussel on MoviePage
  */
 export default function NowPlaying() {
@@ -13,6 +13,8 @@ export default function NowPlaying() {
     const [token,setToken] = useState(JSON.parse(userInfos).token)
     
     const [nowPlaying, setnowPlaying] = useState([]); 
+    
+    let storedData = window.localStorage.watchlist
     
 
     useEffect(() => {
@@ -23,7 +25,6 @@ export default function NowPlaying() {
           .catch(e=>setToken(''));
     }, [token]);
 
-   
 
     //console.log(nowPlaying)
 
@@ -60,8 +61,13 @@ export default function NowPlaying() {
                             : <img src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} alt={movie.title}/>
                         }
                         <Link to={`/movies/${movie.id}`}><button>Watch Now</button></Link>
-                        <button className='nowPlayingWatchlist addtowatch' onClick={() => {addStorage(movie)}}>+</button>
+
+                        {!storedData.includes(movie.id.toString()) 
+                        ?<button className='nowPlayingWatchlist addtowatch' onClick={() => {addStorage(movie)}}>+</button>
+                        :<button className='nowPlayingWatchlist removetowatch' onClick={() => {removeStorage(movie)}}>-</button>}
+
                         </div>
+
                     </SplideSlide>
         })}
 

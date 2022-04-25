@@ -2,6 +2,9 @@
 .specific{
     width: 100%;
     &Movie{
+        background-position: 'right 0 top';
+        background-size: 'cover';
+        background-repeat: 'no-repeat';
         &Info{
             display:flex;
             flex-direction: row;
