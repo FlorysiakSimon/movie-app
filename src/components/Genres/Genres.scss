@@ -4,8 +4,8 @@
     margin: 1em;
   }
   
-  .tag{
-   padding: 2px 10px;
+.tag{
+    padding: 2px 10px;
     background-color: var(--main-color);
     color:white;
     margin:3px;
@@ -16,9 +16,9 @@
         cursor: pointer;
         opacity: 0.7;
     }
-  }
+}
   
-  .active{
+.active{
     background-color: var(--button-bg);
-  }
+}
   

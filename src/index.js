@@ -19,7 +19,9 @@ import 'react-toastify/dist/ReactToastify.min.css';
 import WatchlistPage from "./pages/WatchlistPage/WatchlistPage";
 
 
-
+if (localStorage.getItem("watchlist") === null) {
+  localStorage.setItem('watchlist',"")
+}
 
 
 render(

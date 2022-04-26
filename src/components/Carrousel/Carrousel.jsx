@@ -30,7 +30,7 @@ export default function Carrousel() {
 
     // We check if all the carroussel images is loaded
 
-    loadImages(...['../../assets/bg1.jpg','../../assets/bg2.jpg','../../assets/bg3.jpg'])
+    loadImages(...['../../assets/bg1.jpg','../../assets/bg2.jpg','../../assets/bg3.jpg','../../assets/bg4.jpg'])
     .then((response)=>{
 
        if(response === "All Images are loaded"){
