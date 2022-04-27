@@ -72,7 +72,6 @@ export default function MovieHeader({movie,videos}) {
       
     let storedData = window.localStorage.watchlist
 
-    
     return (
     <>
         <div className='specific'>

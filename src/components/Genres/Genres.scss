@@ -20,5 +20,17 @@
   
 .active{
     background-color: var(--button-bg);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    span{
+        background-color: white;
+        opacity: 0.7;
+        padding: 0px 5px;
+        color:black;
+        font-size: 12px;
+        border-radius: 15px;
+        margin-left: 5px;
+    }
 }
   

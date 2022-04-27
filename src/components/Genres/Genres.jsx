@@ -50,7 +50,7 @@ const Genres = ({selectedGenres,setSelectedGenres,genres,setGenres,type,setPage,
           onClick={() => handleRemove(genre)}
           className='tag active'
         >
-        {genre.name}
+        {genre.name} <span>x</span>
         </div>
       ))}
       {genres.map((genre) => (

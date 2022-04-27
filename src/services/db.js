@@ -147,3 +147,28 @@ export const topRatedMovies = async (page,token) => {
         console.log(e);
     }
 };
+
+
+/*ACTOR REQUEST */
+
+export const actorInfos = async (id,token) => {
+    try {
+        const res = await axios.get(`${baseURL}movies/actor/${id}`, {headers: {
+            "Authorization": `Bearer ${token}`
+            }});
+        return res.data;
+    } catch (e) {
+        console.log(e);
+    }
+};
+
+export const actorInfosMovies = async (id,token) => {
+    try {
+        const res = await axios.get(`${baseURL}movies/actor/${id}/movies`, {headers: {
+            "Authorization": `Bearer ${token}`
+            }});
+        return res.data;
+    } catch (e) {
+        console.log(e);
+    }
+};
