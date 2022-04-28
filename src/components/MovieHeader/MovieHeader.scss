@@ -68,3 +68,19 @@
 .custombg{
     background-image: linear-gradient(to right, rgba(31.5, 31.5, 52.5, 1) 150px, rgba(31.5, 31.5, 52.5, 0.84) 100%);
 }
+
+
+
+@media screen and (max-width: 560px) {
+    .specificMovieInfo{
+        flex-direction: column;
+        img{
+            max-width: 100% !important;
+            height: 390px;
+        }
+        &Details{
+            max-width: 100%;
+        }
+    }
+  }
+  

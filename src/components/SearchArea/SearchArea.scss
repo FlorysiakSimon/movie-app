@@ -48,17 +48,20 @@
   }
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 1250px) {
 
-  .search{
-    margin:0;
-    width: 100%;
-    &Input{
-      svg{
-        left:65px;
-      }
-  
-    }  
+  .popularButton{
+    padding:1.5em 3.1em;
   }
+  
+}
+
+
+@media screen and (max-width: 769px) { 
+
+  .popularButton{
+    padding: 1.5em 7.15em;
+  }
+
   
 }

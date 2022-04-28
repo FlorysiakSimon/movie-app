@@ -4,8 +4,24 @@
     bottom:0;
     flex-direction: row;
     &Star{
-        width: 25px;
+        width: 20px;
         margin-right: 5px;
+    }
+    
+}
+
+@media screen and (max-width: 1220px) {
+   
+    .ratingStar{
+        width:10px;
+    }
+    
+}
+
+@media screen and (max-width: 769px) {
+   
+    .ratingStar{
+        width:25px;
     }
     
 }

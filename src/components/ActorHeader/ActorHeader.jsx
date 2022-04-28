@@ -1,5 +1,8 @@
 import React from 'react'
 
+/**Display infos from an actor on actorPage
+ * @param  {array} {data}
+ */
 export default function ActorHeader({data}) {
   return (
     <div className='specific'>
@@ -15,7 +18,6 @@ export default function ActorHeader({data}) {
                  
                  <div className='specificMovieInfoDetails'>
                      <h2>{data.name}</h2>
-
                      <p>{data.birthday}</p>
                      <p className='specificMovieInfoDetailsTagline'></p>
                      <h3>Biography</h3>

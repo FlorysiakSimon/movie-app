@@ -1,4 +1,4 @@
-.casting{
+.actor{
     display:flex;
     flex-wrap: wrap;
     margin: 1em;
@@ -13,7 +13,7 @@
         height: 100%;
         img{
             width: 100%;
-            min-height: 230px;
+            min-height: 250px;
             border-radius: 10px 10px 0px 0px;
             object-fit: cover;
         }
@@ -29,11 +29,5 @@
             font-size: 0.7rem;
             margin-bottom: 5px;
         }
-    }
-}
-
-@media screen and (max-width: 360px) { 
-    .castingInfos{
-        width: 100%;
     }
 }

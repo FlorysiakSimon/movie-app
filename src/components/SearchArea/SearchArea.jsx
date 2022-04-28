@@ -28,15 +28,17 @@ export default function SearchArea() {
 
   //WATCHLIST
   useEffect(() => {
-    let moviesId = window.localStorage.watchlist
-      ? window.localStorage.watchlist.split(",")
-      : [];
+    if(window.localStorage.watchlist.length){
+      let moviesId = window.localStorage.watchlist
+        ? window.localStorage.watchlist.split(",")
+        : [];
 
-    for (let i = 0; i < moviesId.length; i++) {
-      db.get(`movies/${moviesId[i]}`, {headers: {
-        "Authorization": `Bearer ${token}`
-        }})
-        .then((res) => setListData((listData) => [...listData, res.data]));
+      for (let i = 0; i < moviesId.length; i++) {
+        db.get(`movies/${moviesId[i]}`, {headers: {
+          "Authorization": `Bearer ${token}`
+          }})
+          .then((res) => setListData((listData) => [...listData, res.data]));
+      }
     }
   }, [token]);
 
@@ -62,8 +64,7 @@ export default function SearchArea() {
     }
   }, [search, token]);
 
-  //console.log(listData)
-  //console.log(data)
+  
 
   return (
     <div className="search">
@@ -110,9 +111,10 @@ export default function SearchArea() {
 
         : undefined
         })
+
       : undefined}
 
-      {!search.length ? <Link to="/watchlist"><button className='popularButton'>See More</button></Link>:undefined}
+      {!search.length ? !listData.length ? <h5 style={{marginLeft:"1.5em"}}>There is no movie in your watchlist</h5> :<Link to="/watchlist"><button className='popularButton'>See More</button></Link>:undefined}
     </div>
   )
 }

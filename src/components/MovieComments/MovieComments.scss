@@ -112,3 +112,19 @@
       color: white;
     }
 }
+
+
+@media screen and (max-width: 670px) {
+
+    .comments{
+        
+        textarea{
+            width: 100%;
+            margin-bottom: 1em;
+        }
+        &SectionComment{
+            min-width: 100%;
+        }
+    }
+
+}
