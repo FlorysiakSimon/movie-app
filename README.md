@@ -1,6 +1,10 @@
 # MOVIE-APP
 
-Full stack web app
+MERN stack Entertainment application
+
+### Screenshot
+
+![Lien](https://raw.githubusercontent.com/FlorysiakSimon/movie-app/main/public/images/desktop_app.png?token=GHSAT0AAAAAABIYHS5CHNJXMXIH6ZOQ445MYTL3YBQ)
 
 ## Prerequisites
 
@@ -20,14 +24,23 @@ Full stack web app
 ## Installation
 
 1. Clone this repository
+
    ```sh
    git clone https://github.com/FlorysiakSimon/movie-app
    ```
+
 2. Install NPM packages
+
    ```sh
    npm i
    ```
-3. Run the project (port 3000 by default)
+
+3. Run the project (use port 3001)
+
    ```sh
    npm start
    ```
+
+4. Get the backend
+
+- This project uses an API available [here](https://github.com/FlorysiakSimon/movie-app-back-end).
