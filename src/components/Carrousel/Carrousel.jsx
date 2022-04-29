@@ -27,7 +27,7 @@ export default function Carrousel() {
             });
         },10000);
     }
-
+    
     // We check if all the carroussel images is loaded
 
     loadImages(...['../../assets/bg1.jpg','../../assets/bg2.jpg','../../assets/bg3.jpg','../../assets/bg4.jpg'])

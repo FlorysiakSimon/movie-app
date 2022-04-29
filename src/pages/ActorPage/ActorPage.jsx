@@ -39,7 +39,6 @@ export default function ActorPage() {
     },[id,token])
 
     console.log(data)
-    console.log(movies)
 
   return (
     <div id="movie">
