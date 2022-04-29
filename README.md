@@ -4,7 +4,7 @@ MERN stack Entertainment application
 
 ### Screenshot
 
-![Lien](https://raw.githubusercontent.com/FlorysiakSimon/movie-app/main/public/images/desktop_app.png?token=GHSAT0AAAAAABIYHS5CHNJXMXIH6ZOQ445MYTL3YBQ)
+![Lien](https://github.com/FlorysiakSimon/movie-app/blob/main/public/images/desktop_app.png)
 
 ## Prerequisites
 
