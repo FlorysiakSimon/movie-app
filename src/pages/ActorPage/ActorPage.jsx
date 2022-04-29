@@ -38,7 +38,6 @@ export default function ActorPage() {
         fetchActorInfosMovies()
     },[id,token])
 
-    console.log(data)
 
   return (
     <div id="movie">

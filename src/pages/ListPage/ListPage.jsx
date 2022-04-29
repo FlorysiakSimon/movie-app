@@ -38,11 +38,29 @@ export default function ListPage() {
        // window.scroll(0, 0);
     };
     
+    //transform title using params
+    const modifyTitle = (name) => {
+          switch (name) {
+            case 'trending':
+              return "Trending"
+            case 'top-rated':
+              return `Top Rated`
+            case 'now-playing':
+              return `Now Playing`
+            case 'upcoming':
+              return 'Upcoming'
+            default:
+              break;
+          }
+        return name
+    };
+
     return (
         <div id="movie">
             <NavBar />
 
             <div className='movieList'>
+                <h2 className='movieTitle'>{modifyTitle(name)}</h2>
                 <MovieItem data={data.results} />
 
                 <ReactPaginate

@@ -37,6 +37,7 @@ export default function WatchlistPage() {
         <NavBar />
 
         <div className='movieList'>
+            <h2 className='movieTitle'>Watchlist</h2>
             {listData.length 
             ? <MovieItem data={listData} /> 
             : <h5 style={{marginLeft:'1em'}}>There is no movie in your watchlist</h5>}

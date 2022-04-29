@@ -18,7 +18,7 @@ export default function ActorHeader({data}) {
                  
                  <div className='specificMovieInfoDetails'>
                      <h2>{data.name}</h2>
-                     <p>{data.birthday}</p>
+                     <p>{data.birthday} <span>&#183;</span> {data.known_for_department} <span>&#183;</span> {data.place_of_birth}</p>
                      <p className='specificMovieInfoDetailsTagline'></p>
                      <h3>Biography</h3>
                      <p>{data.biography}</p>
