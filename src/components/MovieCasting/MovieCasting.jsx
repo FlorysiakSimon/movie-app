@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
  * @param  {array} data
  */
 export default function MovieCasting({data}) {
-  console.log(data)
+  
   return (
       <>
         <h2 className='movieTitle'>Casting</h2>

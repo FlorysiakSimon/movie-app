@@ -8,7 +8,7 @@ import { removeStorage } from '../../services/removeStorage';
  * @param  {array} movie
  * @param  {array} videos
  */
-export default function MovieHeader({movie,videos}) {
+export default function MovieHeader({movie,videos,bgImg}) {
 
     //MODAL
     const [modalOpen, setModalOpen] = useState(false);
@@ -72,6 +72,11 @@ export default function MovieHeader({movie,videos}) {
       
     let storedData = window.localStorage.watchlist
 
+    //return loader if bgimg is not loaded
+    if(!bgImg){
+        return <div className='specificLoader'></div>
+    }
+
     return (
     <>
         <div className='specific'>
@@ -81,7 +86,7 @@ export default function MovieHeader({movie,videos}) {
                     {backgroundPosition: 'right 0 top',
                         backgroundSize: 'cover',
                         backgroundRepeat: 'no-repeat',
-                        backgroundImage: `url(https://image.tmdb.org/t/p/original/${movie.backdrop_path})`,
+                        backgroundImage: `url(https://www.themoviedb.org/t/p/w1920_and_h800_multi_faces/${bgImg})`,
                         minHeight:'280px'}}
                 >
                 

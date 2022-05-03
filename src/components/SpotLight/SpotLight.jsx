@@ -20,14 +20,16 @@ export default function SpotLight() {
           .catch(e=>setToken(''));
     }, [token]);
 
-
-
+    //return loader if backgroundImage is not loaded
+    if(!spotLight.poster_path){
+        return <div className='spotlightLoader'></div>
+    }
+        
     return (
         <div className='spotLight' style={{
-            backgroundPosition: 'right 0 top -140px',
             backgroundSize: 'cover',
             backgroundRepeat: 'no-repeat',
-            backgroundImage: `url(https://image.tmdb.org/t/p/original/${spotLight?.poster_path})`,
+            backgroundImage: `url(https://www.themoviedb.org/t/p/w1920_and_h800_multi_faces/${spotLight?.poster_path})`,
             minHeight:'360px'
             }}>
                 

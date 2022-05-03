@@ -35,7 +35,6 @@ export default function ListPage() {
     const handlePageChange = (page) => {
         setPage(page.selected + 1)
         document.querySelector('.movieList').scrollIntoView()
-       // window.scroll(0, 0);
     };
     
     //transform title using params

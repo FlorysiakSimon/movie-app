@@ -24,6 +24,7 @@ export default function SpecificMovie() {
     const [videos,setVideos] = useState(null);
     const [recommendations,setRecommendations] = useState([]);
     const [comments,setComments] = useState([])
+    const [isLoading,setIsLoading] = useState(true)
 
     const {id} = useParams();
     
@@ -60,19 +61,25 @@ export default function SpecificMovie() {
         fetchMovie();
         fetchCasting();
         fetchVideos();
+        setIsLoading(false)
     }, [id,token]);
 
     //console.log(credits)
     //console.log(movie)
     //console.log(videos)
     //console.log(recommendations)
+
+    if(isLoading){
+        return <>Loading...</>
+    }
+
     return (
         <div id="movie">
 
             <NavBar />
 
             <div id='movieInfos'>
-                <MovieHeader movie={movie} videos={videos} />
+                <MovieHeader movie={movie} videos={videos} bgImg={movie.backdrop_path}/>
                 <div id="movieInfosWrapper">
                     <div id="movieInfosWrapperLeft">
                         <MovieCasting data={credits} />
