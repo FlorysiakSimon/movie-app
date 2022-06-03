@@ -103,11 +103,13 @@ export default function MovieHeader({movie,videos,bgImg}) {
 
                         <div className='specificMovieInfoDetails'>
                             <h2>{movie.title}</h2>
-                            <p>{movie.release_date} <span>&#183;</span> {
-                                movie?.genres?.map((genres,index) => {
-                                        return  <span className='' key={index}>{genres.name} </span>
+                            <p>{movie.release_date} <span>&#183;</span> 
+                        
+                            {movie?.genres?.map((genres,index) => {
+                                        return  <span className='' key={index}>{genres.name}</span>
                                     })
-                                }<span>&#183;</span> {NumToTime(movie.runtime) }
+                            }
+                                <span>&#183;</span> {NumToTime(movie.runtime) }
                                 
                                 {videos ? <span className='specificMovieInfoDetailsTrailer' onClick={()=>{setModalOpen(!modalOpen)}}>
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">

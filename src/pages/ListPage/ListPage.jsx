@@ -1,5 +1,5 @@
 import React,{useEffect,useState} from 'react'
-import ReactPaginate from "https://cdn.skypack.dev/react-paginate@7.1.3";
+import ReactPaginate from 'react-paginate';
 import NavBar from '../../components/NavBar/NavBar'
 import './ListPage.scss'
 import db from '../../services/db'

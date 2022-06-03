@@ -34,7 +34,11 @@ export default function ProfilePage() {
             console.log(fileName)
             console.log(file)
             console.log(data)
-            db.post(`users/modify-avatar/${user_id}`,{data})
+            db.post(`users/modify-avatar/${user_id}`,{data},{
+                headers: {
+                        'Content-Type': 'multipart/form-data',
+                    }
+            })
             .then((res) => {
                     console.log(res)
                 })
@@ -76,7 +80,7 @@ export default function ProfilePage() {
                     
                     <form method="post"  encType="multipart/form-data" action={`http://localhost:3000/users/modify-avatar/${user_id}`} >
                         <input type="file"  onChange={(e) => setFile(e.target.files[0])} name="image"/>
-                        <input type="submit" value="Submit"/>
+                        <input type="submit" value="Envoyer"/>
                     </form>
                 </div>
                 

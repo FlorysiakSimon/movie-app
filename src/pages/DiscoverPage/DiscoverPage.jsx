@@ -1,5 +1,5 @@
 import React,{useEffect,useState} from 'react'
-import ReactPaginate from "https://cdn.skypack.dev/react-paginate@7.1.3";
+import ReactPaginate from 'react-paginate';
 import NavBar from '../../components/NavBar/NavBar'
 import './DiscoverPage.scss'
 import axios from 'axios';
@@ -29,17 +29,18 @@ export default function DiscoverPage() {
     const [selectedGenres, setSelectedGenres] = useState([]);
     const genreforURL = useGenre(selectedGenres);
     
+    
     const fetchMovies = async () => {
       const { data } = await axios.get(
         `https://api.themoviedb.org/3/discover/movie?api_key=ccfb5b1d68f6fc53b586ba1f720f736e&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=${currentPage}&with_genres=${genreforURL}`
       );
       setData(data);
+      
     }
 
 
     useEffect(() => {
       fetchMovies();
-
       // eslint-disable-next-line
     }, [genreforURL,currentPage]);
 
@@ -49,6 +50,7 @@ export default function DiscoverPage() {
             const request = await searchMovie(search, token,currentPage);
             if (!request) return console.log('data error');
             setSearchData(request);
+            
           };
           getSearchData();
         }
@@ -61,6 +63,7 @@ export default function DiscoverPage() {
         document.querySelector('.movieList').scrollIntoView()
     };
     
+
     return (
     <div id="movie">
             <NavBar />
@@ -80,8 +83,8 @@ export default function DiscoverPage() {
               setGenres={setGenres}
               setPage={setPage}
             />
-
-            {search.length > 2 ? (
+            
+            {search.length  > 2 ? (
                 <>
                     <MovieItem data={searchData.results} />
 

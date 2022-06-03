@@ -1,14 +1,14 @@
 import axios from 'axios'
 
 export default axios.create({
-	baseURL: 'http://localhost:3000/',
+	baseURL: 'https://moncinema.herokuapp.com/',
 });
 
-const baseURL = 'http://localhost:3000/'
+const baseURL = 'https://moncinema.herokuapp.com/'
 
 /* VERIFY JSON WEB TOKEN */ 
 export const verifyToken = async (token) => {
-	axios.get('http://localhost:3000/users/verifytoken', { headers: { Authorization: `Bearer`+ token } })
+	axios.get('https://moncinema.herokuapp.com/users/verifytoken', { headers: { Authorization: `Bearer`+ token } })
     .then(response => {
         // If request is good...
         console.log(response.data);

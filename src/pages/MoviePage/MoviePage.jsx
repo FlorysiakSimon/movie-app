@@ -14,7 +14,7 @@ export default function MoviePage() {
     // In first place i need to check if the JWT is inside the localStorage
     const userInfos = localStorage.getItem("userInfos");
     const [token,setToken] = useState(JSON.parse(userInfos).token)
-
+    
 
     if(userInfos === null){
       return window.location.href = "/";

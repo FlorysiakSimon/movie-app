@@ -6,7 +6,7 @@ MERN stack Entertainment application
 
 ![Lien](https://github.com/FlorysiakSimon/movie-app/blob/main/public/images/desktop_app.png)
 
-- i used [this design](https://dribbble.com/shots/15109777-Movie-Streaming-Dashboard) for the home page
+- i used [this design](https://dribbble.com/shots/15109777-Movie-Streaming-Dashboard) for the Home page
 
 ## Prerequisites
 
